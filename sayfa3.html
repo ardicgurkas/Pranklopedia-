@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Household & Roommate Pranks</title>
+<head>
+</html>
+<meta charset="UTF-8">
+<body>
+<p>Shrek teleported you here</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        body {
+            background-color: rgba(220, 220, 171, 0.971); /* OGRE tarzı sarı arka plan */
+            text-align: center;
+            font-family: Arial;
+        }
+        h1 { color: darkgreen; }
+        p { color: rgb(205, 165, 91); font-size: 20px; }
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(186, 216, 186);
+        }
+        button:hover { background-color: rgb(116, 131, 116); }
+/* Dark mode */
+.dark-mode {
+    color: white;
+}
+
+/* Fotoğraf sayfaları için */
+.dark-mode.photo {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('arkaplan3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Düz renk sayfaları için */
+.dark-mode.color {
+    background-color: #121212; /* istediğin koyu renk */
+}
+
+/* Geçiş efekti */
+body {
+    transition: background 0.5s, color 0.5s;
+}
+    </style>
+</head>
+<body>
+    <h1>Household & Roommate Pranks</h1>
+    <h2>Scroll down for more!</h2>
+<br>
+<a href="Celebrity.html">
+    <img src="freepik__-celebrity-takeover-replace-family-photos-or-portr__53024.png"  style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Celebrity Takeover
+<br>
+<br>
+<a href="IOR.html">
+    <img src="123.png" style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Inside-Out Room
+<br>
+
+<a href="Balloon.html">
+    <img src="Balloons In Bedroom.jpg" style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Balloon Room
+<br>
+
+<a href="Soap.html">
+    <img src="soap.png" style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Unlatherable Soap
+<br>
+<a href="shampoo.html">
+    <img src="shamp.png" style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Shampoo Seal
+<br>
+<a href="Stuck.html">
+    <img src="daa.png" style="width:300px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Stuck Furniture
+<br>
+<a href="Water.html">
+    <img src="e.png" style="width:300px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Water Cups Prank
+<br>
+
+
+
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Safety Tips for Pranking
+* Keep it Harmless: Avoid pranks that cause damage to property or real distress.<br>
+* Know Your Audience: Don't prank someone who is having a bad day or doesn't share your sense of humor.<br>
+* Ensure Safety: Never use hazardous materials or create dangerous situations (e.g., in stairwells or involving traffic).<br>
+<br>
+
+
+<body data-bg="color">
+        <button id="modeToggle"
+        style="position:fixed; top:20px; right:20px; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; background-color:darkgreen; color:white;">
+    🌙 Dark Mode
+    <button onclick="window.location.href='index.html'">Go back</button>
+</body>
+</html>
+<script>
+const darkButton = document.getElementById("modeToggle");
+const isPhotoPage = document.body.dataset.bg === "photo";
+
+// Sayfa açıldığında default light mod
+if(localStorage.getItem("darkMode") === "true"){
+    document.body.classList.add("dark-mode");
+    if(isPhotoPage) document.body.classList.add("photo");
+    else document.body.classList.add("color");
+    darkButton.textContent = "☀️ Light Mode";
+} else {
+    darkButton.textContent = "🌙 Dark Mode"; // default light mod
+}
+
+// Butona tıklandığında dark/light geçişi
+darkButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    if(isPhotoPage){
+        document.body.classList.toggle("photo");
+    } else {
+        document.body.classList.toggle("color");
+    }
+
+    if(document.body.classList.contains("dark-mode")){
+        darkButton.textContent = "☀️ Light Mode";
+        localStorage.setItem("darkMode", "true");
+    } else {
+        darkButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem("darkMode", "false");
+    }
+});
+</script>
+
+
+

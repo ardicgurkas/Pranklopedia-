@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Funny pranks on friends</title>
+</head>
+<body>
+<p>Shrek teleported you here</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    
+    <style>
+        body {
+            background-color: rgba(220, 220, 171, 0.971); /* OGRE tarzı sarı arka plan */
+            text-align: center;
+            font-family: Arial;
+        }
+        h1 { color: darkgreen; }
+        p { color: rgb(205, 165, 91); font-size: 20px; }
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(186, 216, 186);
+            
+            
+        }
+        
+/* Dark mode */
+.dark-mode {
+    color: white;
+}
+
+/* Fotoğraf sayfaları için */
+.dark-mode.photo {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('arkaplan3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Düz renk sayfaları için */
+.dark-mode.color {
+    background-color: #121212; /* istediğin koyu renk */
+}
+
+/* Geçiş efekti */
+body {
+    transition: background 0.5s, color 0.5s;
+}
+
+        button:hover { background-color: rgb(116, 131, 116); }
+    </style>
+</head>
+<body>
+   
+<body data-bg="color"> <!-- düz renk sayfası -->
+    <h1>Funny pranks on friends</h1>
+    <h2>Scroll down for more!</h2>
+<br>
+<a href="CaramelOnion.html">
+    <img src="s copy.png"  style="width:200px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;">
+    Caramel Onions
+<br>
+    <a href="Oreo.html">
+    <img src="Oreos.png"  style="width:400px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Fake Oreos
+<br>
+ <a href="Jell-O.html">
+    <img src="JELLO.png"  style="width:400px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Jell-O "Juice"
+<br> 
+<br>
+<a href="Ckies.html">
+    <img src="Cookies.png"  style="width:400px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Salty Cookies
+<br> 
+<br>
+<a href="FROZEN CEREAL.html">
+    <img src="cereal.png"  style="width:400px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Frozen cereal
+<br> 
+<a href="Sponge.html">
+    <img src="first.png"  style="width:300px; cursor:pointer; border-radius:20px;">
+</a>
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Sponge Brownies
+<br> 
+
+<p style="color: rgb(81, 55, 5); font-size: 21px; margin: bottom 0px; Arial, sans-serif;"></p>
+Safety Tips for Pranking
+* Keep it Harmless: Avoid pranks that cause damage to property or real distress.<br>
+* Know Your Audience: Don't prank someone who is having a bad day or doesn't share your sense of humor.<br>
+* Ensure Safety: Never use hazardous materials or create dangerous situations (e.g., in stairwells or involving traffic).<br>
+<br>
+
+    <button onclick="window.location.href='index.html'">Go back</button>
+</body>
+</html>
+<button id="modeToggle"
+        style="position:fixed; top:20px; right:20px; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; background-color:darkgreen; color:white;">
+    🌙 Dark Mode
+</button>
+<script>
+const darkButton = document.getElementById("modeToggle");
+
+// Sayfa tipini al
+let isPhotoPage = false; 
+if(document.body.dataset.bg === "photo") isPhotoPage = true;
+
+// Sayfa yüklendiğinde dark mode kontrolü
+if(localStorage.getItem("darkMode") === "true"){
+    document.body.classList.add("dark-mode");
+    if(isPhotoPage) document.body.classList.add("photo");
+    else document.body.classList.add("color");
+    darkButton.textContent = "☀️ Light Mode";
+}
+
+// Butona tıklandığında
+darkButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    if(isPhotoPage) document.body.classList.toggle("photo");
+    else document.body.classList.toggle("color");
+
+    if (document.body.classList.contains("dark-mode")) {
+        darkButton.textContent = "☀️ Light Mode";
+        localStorage.setItem("darkMode", "true");
+    } else {
+        darkButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem("darkMode", "false");
+    }
+});
+</script>
+

@@ -1,0 +1,294 @@
+<head>
+<title>Pranklopedia</title>
+<meta charset="UTF-8">
+<style>
+body {
+    background-image: url('arkaplan3.png');
+    background-color: lightgreen;
+    text-align: center;
+    font-family: Arial;
+}
+
+button {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 2px 1px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(219, 234, 219);
+}
+
+h1 {
+    color: rgb(114, 149, 26);
+}
+
+</style>
+
+<style>
+#results div:hover {
+    background-color: #d4ffd4;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+<h1>The Pranklopedia.</h1>
+<p>Your Ultimate Guide to Mischief</p>
+
+
+<!-- Arama Formu -->
+<div style="margin:20px; text-align:center;">
+  <input type="text" id="searchInput" placeholder="Search Pranks"
+         style="padding:10px; width:300px; border-radius:8px; border:1px solid gray;">
+  <button id="searchBtn"
+          style="padding:10px 20px; border:none; border-radius:20px; background-color:darkgreen; color:white; cursor:pointer;">
+    Search
+  </button>
+
+  <div id="results" style="width:300px; margin:10px auto;"></div>
+</div>
+
+<script>
+const pranks = [
+  { name:"Unlatherable Soap Prank", page:"Soap.html", keywords:["unlatherable soap prank","soap","Soap","soap prank","Soap prank","Unlatherable soap prank"] },
+  { name:"Water Cups Prank", page:"Water.html", keywords:["water cups prank","water","cups","Water","Cups","Water cups","wet","Wet"] },
+  { name:"Caramel Onions", page:"CaramelOnion.html", keywords:["caramel onions","caramel","Caramel","Caramel onions","onions","Onions"] },
+  { name:"Fake Oreo", page:"Oreo.html", keywords:["oreo","fake oreo","oreos","Oreos","Oreo","Toothpaste","Fake oreo","Fake oreos"] },
+  { name:"Jell-O Juice", page:"Jell-O.html", keywords:["jell-o juice","juice","jello","jell-o","Jell-o","Jello","Jello juice","Jell-o juice","Juice"] },
+  { name:"Salty Cookies", page:"Ckies.html", keywords:["salty cookies","cookies","Cookies","Salty","salty","Salty cookies"] },
+  { name:"Frozen Cereal", page:"FROZEN CEREAL.html", keywords:["frozen cereal","frozen","cereal","Frozen cereal"] },
+  { name:"Sponge Brownies", page:"Sponge.html", keywords:["sponge brownies","brownies","sponge","Brownies","Sponge","Sponge brownies"] },
+  { name:"Celebrity Takeover", page:"Celebrity.html", keywords:["celebrity takeover","celebrity","Celebrity","celebrities","Celebrities","Celebrity takeover"] },
+  { name:"Inside Out Room", page:"IOR.html", keywords:["inside out room","Inside out room","clothes"] },
+  { name:"Balloon Room", page:"Balloon.html", keywords:["balloon room","Balloon","balloon","Balloons","balloons"] },
+  { name:"Shampoo Seal", page:"shampoo.html", keywords:["shampoo seal","shampoo","seal","Shampoo","Shampoo seal"] },
+  { name:"Mouse Sensor Tape", page:"Mouse.html", keywords:["mouse sensor tape","mouse","sensor tape","Sensor tape","Mouse sensor tape"] },
+  { name:"Stuck Furniture", page:"Stuck.html", keywords:["stuck furniture","stuck","furniture","Stuck furniture"] },
+  { name:"Impossible Desktop", page:"Impossible.html", keywords:["impossible desktop","impossible","desktop","laptop","pc","computer","Impossible desktop"] },
+  { name:"Autocorrect Sabotage", page:"Auto.html", keywords:["autocorrect sabotage","autocorrect","sabotage","Autocorrect sabotage"] },
+  { name:"Voice Activated Toaster", page:"Toast.html", keywords:["voice activated toaster","toaster","voice","voice activated","Voice activated"] },
+  { name:"Unending Typing", page:"tYPE.html", keywords:["unending typing","type","typing","Unending typing"] },
+  { name:"Fake Bug", page:"FakeBug.html", keywords:["fake bug","Fake bug","FAKE BUG","fake","bug"] },
+  { name:"Whoopee Cushion", page:"Whoopee.html", keywords:["whoopee cushion","whoopee","Whoopee","Whoope cushion"] },
+  { name:"Toilet Papered Room", page:"Toilet.html", keywords:["toilet papered room","paper, toilet","Toilet papered room"] },
+  { name:"Clock Shift", page:"Clock Shift.html", keywords:["clock","shift","Clock shift","clock shift"] }
+];
+
+const input = document.getElementById('searchInput');
+const resultsBox = document.getElementById('results');
+const button = document.getElementById('searchBtn');
+
+function findMatches(query){
+    query = query.toLowerCase().trim();
+    return pranks.filter(p =>
+        p.name.toLowerCase().startsWith(query) || 
+        p.keywords.some(k => k.toLowerCase().startsWith(query))
+    );
+}
+
+function showResults(matches){
+    resultsBox.innerHTML = "";
+    matches.forEach(p=>{
+        const div = document.createElement("div");
+        div.textContent = p.name;
+        div.style.padding = "8px";
+        div.style.border = "1px solid #ccc";
+        div.style.cursor = "pointer";
+        div.style.background = "#f5f5f5";
+        div.style.marginBottom = "5px";
+        div.style.borderRadius = "5px";
+
+        div.onmouseover = ()=> div.style.background = "#d4ffd4";
+        div.onmouseout = ()=> div.style.background = "#f5f5f5";
+        div.onclick = ()=> window.location.href = p.page;
+
+        resultsBox.appendChild(div);
+    });
+}
+
+input.addEventListener('input', function(){
+    const matches = findMatches(input.value);
+    if(!input.value.trim()) {
+        resultsBox.innerHTML = "";
+        return;
+    }
+    showResults(matches);
+});
+
+button.addEventListener('click', function(){
+    const matches = findMatches(input.value);
+    if(matches.length) window.location.href = matches[0].page;
+    else alert("No prank found!");
+});
+
+</script>
+</script>
+</script>
+
+</script>
+
+
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>İkinci Sayfa</title>
+<button 
+    style="padding: 20px 40px; font-size: 24px; border-radius: 12px; background-color: rgb(1, 62, 1); color: white; cursor: pointer;"
+    onclick="window.location.href='sayfa2.html'">
+    Funny pranks on friends
+</button>
+
+
+
+
+
+<button 
+    style="…; display:block; margin-top:20px;"
+    onclick="…">
+    
+    
+
+</button>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Household & Roommate Pranks</title>
+<button 
+    style="padding: 20px 40px; font-size: 24px; border-radius: 12px; background-color: rgb(3, 134, 3); color: white; cursor: pointer;"
+    onclick="window.location.href='sayfa3.html'">
+    Household & Roommate Pranks
+</button>
+
+
+<button 
+    style="…; display:block; margin-top:20px;"
+    onclick="…">
+
+</button>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Office & Computer Pranks</title>
+<button 
+    style="padding: 20px 40px; font-size: 24px; border-radius: 12px; background-color: rgb(7, 166, 7); color: white; cursor: pointer;"
+    onclick="window.location.href='sayfa4.html'">
+      Office & Computer Pranks
+</button>
+
+<button 
+    style="…; display:block; margin-top:20px;"
+    onclick="…">
+    
+</button>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Classic & Quick Pranks</title>
+<button 
+    style="padding: 20px 40px; font-size: 24px; border-radius: 12px; background-color: rgb(7, 187, 7); color: white; cursor: pointer;"
+    onclick="window.location.href='sayfa5.html'">
+      Classic & Quick Pranks
+</button>
+<br>
+<br>
+<br>
+
+
+<button id="modeToggle" 
+        style="position:fixed; top:20px; right:20px; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; background-color:darkgreen; color:white;">
+    🌙 Dark Mode
+</button>
+
+<!-- 2) Dark Mode CSS -->
+<style>
+.dark-mode {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('arkaplan3.png');
+    color: white;
+}
+
+/* Geçiş efekti */
+body {
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Dark mode aktif olduğunda tüm yazılar beyaz */
+.dark-mode {
+    color: white;
+}
+
+/* Fotoğraf sayfaları için */
+.dark-mode.photo {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('arkaplan3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Düz renk sayfaları için */
+.dark-mode.color {
+    background-color: #121212; /* koyu renk */
+}
+</style>
+</style>
+
+<!-- 3) Dark Mode JS -->
+<script>
+const darkButton = document.getElementById("modeToggle");
+
+darkButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        darkButton.textContent = "☀️ Light Mode";
+    } else {
+        darkButton.textContent = "🌙 Dark Mode";
+    }
+});
+
+
+</script>
+
+</body>
+</html>
+<script>
+const darkButton = document.getElementById("modeToggle");
+
+// Sayfa tipini al
+let isPhotoPage = false; 
+if(document.body.dataset.bg === "photo") isPhotoPage = true;
+
+// Sayfa yüklendiğinde dark mode kontrolü
+if(localStorage.getItem("darkMode") === "true"){
+    document.body.classList.add("dark-mode");
+    if(isPhotoPage) document.body.classList.add("photo");
+    else document.body.classList.add("color");
+    darkButton.textContent = "☀️ Light Mode";
+}
+
+// Butona tıklandığında
+darkButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    if(isPhotoPage) document.body.classList.toggle("photo");
+    else document.body.classList.toggle("color");
+
+    if (document.body.classList.contains("dark-mode")) {
+        darkButton.textContent = "☀️ Light Mode";
+        localStorage.setItem("darkMode", "true");
+    } else {
+        darkButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem("darkMode", "false");
+    }
+});
+</script>
